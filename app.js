@@ -1,7 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-import userRoute from './api/routes/users.js'
+import usersRoute from './api/routes/users.js'
 
 dotenv.config();
 const app = express()
@@ -17,7 +17,9 @@ const connect = () => {
   }
 }
 
-app.use("/", userRoute)
+app.use(express.json())
+
+app.use("/api/cadastro", usersRoute)
 
 app.listen(8080, () => {
   connect()

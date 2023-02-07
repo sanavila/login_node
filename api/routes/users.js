@@ -1,12 +1,11 @@
 import express from "express"
+import { createUser } from "../controllers/user.js"
 
 const router = express.Router()
 
-router.get("/teste", (req, res) => {
-  res.send("Olá esse é o teste de rota")
-})
-
 //CREATE
+router.post("/", createUser)
+
 //UPDATE
 //DELETE
 //GET
